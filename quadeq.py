@@ -7,7 +7,12 @@ class QuadEq:
         self.coeff_a = coeff_a
         self.coeff_b = coeff_b
         self.coeff_c = coeff_c
+        if type(coeff_a) or type(coeff_b) or type(coeff_c) not in [int,float]:
+            raise TypeError("Coeffient can only be integer or float")
+        if coeff_a==0:
+            raise ValueError("Coeffient of x^2 cannot be zero!")
 
+            
     def expression(self):
         print(str(self.coeff_a)+"x^2 + "+str(self.coeff_b)+"x + "+str(self.coeff_c)+" = 0")
 
